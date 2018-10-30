@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <title>Just A Demo</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body class="<%= params[:controller].gsub('/', '-') %>" id="<%= params[:controller].gsub('/', '-') %>-<%= action_name %>">
+<div class="container">
+  <div class="content"><%= yield %></div>
+</div>
+</body>
+</html>

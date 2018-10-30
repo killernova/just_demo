@@ -1,0 +1,182 @@
+.sessions {
+  background-color: #375672;
+  width: 100%;
+  height: 100%;
+  .company-logo {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+  }
+
+  #login-with-verification-code, #register-box {
+    display: none;
+  }
+
+  .sign-in-sign-up-box {
+    position: fixed;
+    left: 50%;
+    top: 150px;
+    background-color: white;
+    z-index: 1;
+    transform: translate(-50%, 0);
+    box-shadow: 1px 1px 10px $gray, -1px -1px 10px $gray;
+    padding: 10px 2%;
+    width: 400px;
+    min-height: 300px;
+
+    .title {
+      color: $blue;
+      margin-top: 20px;
+      font-size: 1.3em;
+      text-align: center;
+      span {
+        margin: 0 5px;
+      }
+    }
+
+    .switch-action {
+      margin-top: 20px;
+      .login-with-password, .register {
+        cursor: pointer;
+      }
+    }
+
+    .sign-in-sign-up-form {
+      margin-top: 30px;
+      .form-item {
+        position: relative;
+        border: solid 1px $gray;
+        border-radius: 8px;
+        width: 100%;
+        height: 40px;
+        margin-bottom: 10px;
+        label {
+          float: left;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          padding-left: 10px;
+          .fa {
+            font-size: 1.4em;
+            line-height: 40px;
+            color: $gray;
+          }
+        }
+        input {
+          float: left;
+          border: 0 none;
+          width: 80%;
+          outline: none;
+          height: 38px;
+        }
+        .send-verification-code, .count-down {
+          float: right;
+          height: 24px;
+          margin-top: 7px;
+          margin-right: 5px;
+          padding: 0 10px;
+          line-height: 24px;
+          background-color: green;
+          border-radius: 15px;
+          cursor: pointer;
+          font-size: 0.9em;
+          color: white;
+        }
+        .count-down {
+          width: 83px;
+          text-align: center;
+          display: none;
+          background-color: $gray;
+        }
+      }
+      .form-item-error {
+        border-color: red;
+      }
+
+      .input-tip {
+        margin-top: -2px;
+        margin-bottom: 5px;
+        .error {
+          color: red;
+          .error-message {
+            font-size: 0.9em;
+            margin-left: 5px;
+          }
+        }
+      }
+
+      .other-options {
+        font-size: 0.9rem;
+        color: $dark_gray;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a {
+          margin: 10px 0;
+        }
+        .switch-link {
+          cursor: pointer;
+        }
+      }
+
+      .login-btn {
+        background-color: $blue;
+        color: white;
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+    }
+
+    .third-party-login {
+      margin-top: 20px;
+      width: 100%;
+      height: 30px;
+      position: relative;
+      .line {
+        border: 1px $gray solid;
+        width: 100%;
+        height: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+      .text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 5px 10px;
+        z-index: 110;
+        background-color: white;
+        color: $gray;
+      }
+    }
+
+    .third-party-login-icons {
+      margin-top: 10px;
+      position: relative;
+      height: 50px;
+      .icons {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        img {
+          margin-left: 15px;
+        }
+      }
+    }
+
+    .go-to-login {
+      margin: 20px 0;
+      .login-link {
+        color: red;
+        cursor: pointer;
+      }
+    }
+
+    .information {
+      height: 90px;
+    }
+  }
+}

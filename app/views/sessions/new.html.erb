@@ -1,0 +1,93 @@
+<div class="login-box sign-in-sign-up-box" id="login-with-password">
+  <div class="title">Log In</div>
+  <%= form_for :session, url: sessions_path, remote: true, html: {class: 'login-form sign-in-sign-up-form'} do |f| %>
+    <%= hidden_field_tag :authenticity_token, csrf_meta_tag %>
+    <div class="form-item email-form-item">
+      <label><i class="fa fa-user-o" aria-hidden="true"></i></label>
+      <%= f.text_field :email, placeholder: '请输入 Email', class: 'email-input' %>
+    </div>
+    <div class="input-tip hidden">
+        <span class="error" id="email-error">
+          <i class="fa fa-minus-circle" aria-hidden="true"></i>
+          <span class="error-message"></span>
+        </span>
+    </div>
+
+    <div class="form-item">
+      <label><i class="fa fa-lock" aria-hidden="true"></i></label>
+      <%= f.password_field :password, placeholder: '请输入密码', class: 'password-input' %>
+    </div>
+    <div class="input-tip hidden">
+        <span class="error" id="password-error">
+          <i class="fa fa-minus-circle" aria-hidden="true"></i>
+          <span class="error-message"></span>
+        </span>
+    </div>
+
+
+    <div class="other-options">
+      <div class="checkbox pull-left">
+        <label>
+          <%= f.check_box :remember_me %> Remember me
+        </label>
+      </div>
+      <div class="register switch-link">No account? Sign up</div>
+    </div>
+
+    <button class="btn login-btn submit-button" type="button">立即登录</button>
+    <%= f.submit '', class: 'hidden hidden-submit-button' %>
+
+  <% end %>
+
+</div>
+
+
+<div class="sign-in-sign-up-box" id="register-box">
+  <div class="title">Sign Up</div>
+  <%= form_for @user, remote: true, html: {class: 'signup-form sign-in-sign-up-form'} do |f| %>
+    <%= hidden_field_tag :authenticity_token, csrf_meta_tag %>
+    <div class="form-item email-form-item">
+      <label><i class="fa fa-user-o" aria-hidden="true"></i></label>
+      <%= f.text_field :email, placeholder: '请输入 Email', class: 'email-input' %>
+    </div>
+    <div class="input-tip hidden">
+        <span class="error" id="email-error">
+          <i class="fa fa-minus-circle" aria-hidden="true"></i>
+          <span class="error-message"></span>
+        </span>
+    </div>
+
+    <div class="form-item">
+      <label><i class="fa fa-lock" aria-hidden="true"></i></label>
+      <%= f.password_field :password, placeholder: '请输入密码', class: 'password-input' %>
+    </div>
+    <div class="input-tip hidden">
+        <span class="error" id="password-error">
+          <i class="fa fa-minus-circle" aria-hidden="true"></i>
+          <span class="error-message"></span>
+        </span>
+    </div>
+
+    <div class="form-item">
+      <label><i class="fa fa-lock" aria-hidden="true"></i></label>
+      <%= f.password_field :password_confirmation, placeholder: '请再次输入密码', class: 'password-confirmation-input' %>
+    </div>
+    <div class="input-tip hidden">
+        <span class="error" id="password-error">
+          <i class="fa fa-minus-circle" aria-hidden="true"></i>
+          <span class="error-message"></span>
+        </span>
+    </div>
+
+
+        <div class="other-options">
+          <div class="login-link switch-link">Log In</div>
+        </div>
+
+    <button class="btn login-btn submit-button" type="button">提交</button>
+    <%= f.submit '', class: 'hidden hidden-submit-button' %>
+
+  <% end %>
+
+</div>
+
