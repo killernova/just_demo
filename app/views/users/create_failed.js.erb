@@ -1,0 +1,9 @@
+text = "<%= @user.errors.full_messages.join(';') %>"
+displayError($('.email-input:visible'), text)
+
+
+function displayError(obj, message) {
+    obj.parents('.form-item').addClass('form-item-error')
+    obj.parents('.form-item').next().removeClass('hidden')
+    obj.parents('.form-item').next().find('.error-message').text(message)
+}
