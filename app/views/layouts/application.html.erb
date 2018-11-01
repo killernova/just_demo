@@ -12,6 +12,7 @@
 </head>
 
 <body class="<%= params[:controller].gsub('/', '-') %>" id="<%= params[:controller].gsub('/', '-') %>-<%= action_name %>">
-  <div class="content"><%= yield %></div>
+<%= render 'shares/nav_bar' if current_user %>
+<div class="content"><%= yield %></div>
 </body>
 </html>

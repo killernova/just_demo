@@ -1,7 +1,13 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = current_user.articles.order(id: :desc).page(params[:page])
+    if params[:q].present?
+      puts '???????????????????'
+      @articles = Kaminari.paginate_array(Article.cached_search_result(params[:q])).page(params[:page])
+    else
+      @articles = Article.order(id: :desc).page(params[:page])
+    end
   end
 
   def new
@@ -21,6 +27,12 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    if @article.update(article_params)
+      redirect_to article_path(@article), notice: 'Updated succeeded'
+    else
+      flash.now[:alert] = "Faild to update: #{@articles.errors.full_messages.join(';')}"
+      render :edit
+    end
   end
 
   def show
@@ -33,5 +45,9 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :published, :published_at, :body)
+  end
+
+  def set_article
+    @article = Article.find params[:id]
   end
 end

@@ -8,44 +8,44 @@
 
     <%= form_for @article do |f| %>
       <%= f.hidden_field :body, value: @article.body %>
-      <div class="row">
-        <div class="col-md-4">
+      <div class="row title-row">
+        <div class="col-md-3">
           <div class="pull-right">Title</div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
           <%= f.text_field :title, class: 'form-control' %>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="pull-right">Is Published</div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
           <%= f.check_box :published %>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="pull-right">Publish Date</div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
           <%= f.text_field :published_at, class: 'form-control publish-date' %>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="pull-right">Content</div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
           <div id="article-content"></div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-8 col-md-offset-4">
+        <div class="col-md-9 col-md-offset-3">
           <div class="submit-button btn btn-primary" type="button">Submit</div>
         </div>
       </div>

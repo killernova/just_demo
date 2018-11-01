@@ -30,3 +30,11 @@ function validateEmail(email) {
     }
     return result
 }
+
+$(document).ready(function() {
+    $('.search .text').on('click', function() {
+        var val = $('.search-input').val();
+        var url = 'articles?q=' + val;
+        location.href = url;
+    })
+})

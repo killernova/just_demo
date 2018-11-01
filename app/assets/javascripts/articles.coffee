@@ -13,6 +13,8 @@ $(document).on 'turbolinks:load', ->
         theme: 'snow'
       })
 
+      quill.insertText(0, $('#article_body').val(), {})
+
     $('#article_published_at').datetimepicker({
       format: 'yyyy-mm-dd hh:ii',
       autoclose: true,

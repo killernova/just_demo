@@ -33,21 +33,48 @@ body {
 
 
 
-
-.admin-header {
-  height: 40px;
-  line-height: 40px;
-  margin-bottom: 20px;
-  margin-right: -15px;
-  font-size: 1.5rem;
-  background-color: $gray;
-  .fa-sign-out {
-    margin-right: 20px;
+.nav-row {
+  &.row {
+    margin: 0;
   }
-  .sign-out {
-    margin-left: 20px;
+  .nav-body {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000033;
+    color: white;
+    .user {
+      margin-right: 10px;
+    }
+    a {
+      color: white;
+      margin-right: 10%;
+      &:visited, &:link, &:active, &:hover {
+        color: white;
+        text-decoration: none;
+      }
+      &:hover {
+        color: #00CCFF;
+      }
+    }
+    .search {
+      display: flex;
+      align-items: center;
+      margin-right: 40px;
+      cursor: pointer;
+      input {
+        margin-right: 10px;
+        border-radius: 5px;
+        color: #000033;
+      }
+    }
+    .title {
+      margin-right: 40px;
+    }
   }
 }
+
 
 table.table {
   thead tr th, tbody tr td {

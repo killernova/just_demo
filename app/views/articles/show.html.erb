@@ -1,2 +1,25 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-sm-12 main-body">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title"><%= @article.title %></div>
+      </div>
+    </div>
+
+    <div class="row info-row">
+      <div class="col-md-12">
+        <span class="date"><%= @article.published_at.strftime('%F') %></span>
+        <span class="author"> by <%= @article.user.email %></span>
+        <%= link_to edit_article_path(@article) do %>
+          <i class="fa fa-edit"></i>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row body-row">
+      <div class="col-md-12">
+        <div class="body"><%= simple_format(@article.body) %></div>
+      </div>
+    </div>
+  </div>
+</div>

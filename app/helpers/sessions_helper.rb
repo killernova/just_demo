@@ -5,8 +5,13 @@ module SessionsHelper
   end
 
   def current_user
-    user_id = session[:user_id] || cookies.signed_or_encrypted[:user_id]
-    @current_user ||= User.find_by(id: user_id)
+    if user_id = session[:user_id]
+      @current_user ||= User.find_by(id: user_id)
+    elsif user = User.find_by(id: cookies.signed_or_encrypted[:user_id])
+      if user.authenticate?(cookies.signed_or_encrypted[:remember_token])
+        @current_user ||= user
+      end
+    end
   end
 
   def logged_in?
