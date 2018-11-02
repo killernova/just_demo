@@ -47,7 +47,7 @@ body {
     .user {
       margin-right: 10px;
     }
-    a {
+    a.log-out {
       color: white;
       margin-right: 10%;
       &:visited, &:link, &:active, &:hover {
@@ -67,6 +67,19 @@ body {
         margin-right: 10px;
         border-radius: 5px;
         color: #000033;
+      }
+    }
+    .post {
+      margin-right: 40px;
+      a {
+        color: white;
+        &:visited, &:link, &:active, &:hover {
+          color: white;
+          text-decoration: none;
+        }
+        &:hover {
+          color: #00CCFF;
+        }
       }
     }
     .title {
